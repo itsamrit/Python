@@ -1,37 +1,26 @@
 TC : o(n*logn) n for checking is all subarrays can be divided into k parts with max cap mx & logn for binary search of max cap mx.
 // KOKO EATING BANANAS : array of n to be split in n+k size opposite of this
 
-#define intt long long int
-bool valid(intt mid, int h, vector<int>&piles){
-        intt temph=0;
-        for(int i=0;i<piles.size();i++){
-            temph+= (piles[i] + mid-1)/mid;
-        }
+def valid(self,mid, h, piles):
+        temph = 0
+        for pile in piles:
+            temph += (pile + mid - 1) // mid
         
-        if(temph>h)return false;
-        else return true;
-}
-    
-int minEatingSpeed(vector<int>& piles, int h) {
-        intt right =1;
-        intt left;
-        for(int i=0;i<piles.size();i++){
-            if(left<piles[i]){
-                left=piles[i];
-            }
-        }
-        int ans=left;
+        return temph <= h
+
+
+def minEatingSpeed(self, piles: List[int], h: int) -> int:
+        left = 1
+        right = -1
+        for i in range (0,len(piles)):
+            right = max(right,piles[i])
+        ans = right
+        while(left<=right):
+            mid = (left+right)//2
+            if(self.valid(mid,h,piles)):  
+                ans = mid
+                right= mid-1
+            else :
+                left=mid+1
         
-        while(right<=left){
-            intt mid=right + (left-right)/2;
-            if(valid(mid, h, piles)==true){
-                ans=mid;
-                left=mid-1;
-            }
-            else{
-                right=mid+1;
-            }
-        }
-        
-        return ans;
-}
+        return math.ceil(ans)      
