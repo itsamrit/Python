@@ -1,41 +1,26 @@
-//🟩🟩🟩🟩ALWAYS prefer to COMPARE WITH RIGHT PERSON 💞💞❣️right person< or right person<= both gives correct answer
-int bs(vector<int>&nums,int target,int s,int e){
-        while(s<=e){
-            int mid=(s+(e-s)/2);
-            if(nums[mid]==target){
-                return mid;
-            }
-            else if(nums[mid]>target){
-                e=mid-1;
-            }
-            else{
-                s=mid+1;
-            }
-        }
-        return -1;
-    }
-    int search(vector<int>& nums, int target) {   
-        int left=0,right=nums.size()-1;
-        int mid;
-        int ind=-1;
-        while(left<=right){
-            mid=left+(right-left)/2;
-            if((mid==0 || nums[mid]<nums[mid-1]) && (mid==nums.size()-1 || nums[mid]<nums[mid+1])){   //😊🟩 First condition if found & break
-                ind=mid;
-                break;
-            }
-            else if(nums[mid]>nums[nums.size()-1]){   //😊🟩Always prefer to compare with nums[nums.size()-1 ] NOT WITH nums[0]
-                                              //  U can also do this else if(nums[mid]<nums[nums.size()-1])    DONT COMPARE WITH BOTH 0 AND last element
-                left=mid+1;
-            }
-            else{
-                right=mid-1;
-            }
-        }
-        //   If compared with nums[0]  with nums[mid] in above search if(pivot ==-1 )pivot =0;
-        int f=bs(nums,target,0,ind-1);        //🟢Sorted 0 to ind-1 .Since nums[ind] = smallest in rotated array. So dont do 0 to ind
-        int s=bs(nums,target,ind,nums.size()-1);
-        if(f!=-1)return f;
-        else if(s!=-1)return s;
-        else return -1;
-    }
+//🟩🟩🟩🟩RATNA ALWAYS prefer to COMPARE WITH RIGHT PERSON 💞💞❣️right person< or right person<= both gives correct answer
+def bs(self,nums,target,left, right):
+        while(left<=right):
+            mid= (left+right)//2
+            if(nums[mid] == target):return mid
+            elif(nums[mid]>target):right=mid-1
+            else: left=mid+1
+        return -1
+
+def search(self, nums: List[int], target: int) -> int:
+        left = 0
+        right = len(nums)-1
+        temp=-1
+        while(left<=right):
+            mid= (left+right)//2
+            if((mid ==0 or nums[mid]<nums[mid-1]) and (mid == len(nums)-1 or nums[mid+1]>=nums[mid])):
+                temp=mid 
+                break
+            elif(nums[mid]>nums[len(nums)-1]):left=mid+1
+            else : right= mid-1
+
+        t1=self.bs(nums,target,0,mid-1)
+        t2= self.bs(nums,target,mid,len(nums)-1)
+        if(t1==-1 and t2==-1):return -1
+        if(t1==-1):return t2
+        return t1
