@@ -10,27 +10,27 @@ int maxSum(int arr[], int n, int k){
 }
 
 
-Find all Anagram of p in a string s  :Either use unordered_map or normal hashing 
+Find all Anagram of p in a string s 
 
-vector<int> findAnagrams(string s, string p) {             
-        vector<int> pp(26,0);
-        vector<int> ss(26,0);
-        vector<int> ans;
-    
-        for(int i=0;i<p.size();i++){
-            pp[p[i]-'a']++;
-            ss[s[i]-'a']++;
-        }
-        if(pp == ss) ans.push_back(0);
+class Solution:
+    from collections import defaultdict
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        pp = defaultdict(int)
+        ss = defaultdict(int)
+        ans =[]
+        if(len(p)> len(s)): return ans
+        for i in range (0,len(p)):
+            pp[p[i]]+=1
+            ss[s[i]]+=1
+
+        if(pp == ss): ans.append(0)
+        for i in range(len(p),len(s)):
+            ss[s[i-len(p)]]-=1
+            if(ss[s[i-len(p)]] == 0) : del ss[s[i-len(p)]]
+            ss[s[i]]+=1
+            if(ss== pp): ans.append(i-len(p)+1)
         
-        for(int i=p.size();i<s.size();i++){
-            ss[s[i-p.size()] - 'a']--;
-            ss[s[i] - 'a']++;
-            if(pp == ss) ans.push_back(i-p.size()+1);
-        }
-        return ans;  //Returns starting position of all anagrams. ans.size()= total no of anagrams.
-}
-
+        return ans
 
 
 https://leetcode.com/problems/sliding-window-maximum/
