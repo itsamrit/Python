@@ -14,7 +14,7 @@ class Solution:
     ans =[]
     def dfs(self,nums,i,temp):
         if(i>=len(nums)):
-            ans.append(temp)
+            self.ans.append(temp.copy())
             return
         
         temp.append(nums[i])
@@ -24,8 +24,9 @@ class Solution:
 
     def subsets(self, nums: List[int]) -> List[List[int]]:
         temp=[]
+        self.ans=[]
         self.dfs(nums,0,temp)
-        return ans
+        return self.ans
 
 
 
