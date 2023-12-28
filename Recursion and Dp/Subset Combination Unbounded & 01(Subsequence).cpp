@@ -10,7 +10,26 @@
 
 
 
+class Solution:
+    ans =[]
+    def dfs(self,nums,i,temp):
+        if(i>=len(nums)):
+            ans.append(temp)
+            return
+        
+        temp.append(nums[i])
+        self.dfs(nums,i+1,temp)
+        temp.remove(nums[i])
+        self.dfs(nums,i+1,temp)
 
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        temp=[]
+        self.dfs(nums,0,temp)
+        return ans
+
+
+
+    
     vector<vector<int>>ans;
     void dfs(vector<int>&nums,int i,vector<int>&temp){
         // if(i>nums.size())return;
