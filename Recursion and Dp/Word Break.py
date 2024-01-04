@@ -1,7 +1,7 @@
-🟩🟩U need to cross match all words of dictionary to all words formed from string 
-// More similar problems to word break : Extra Characters in a String
-// Method 2 : You just need to match all words with all dictionary.  So instead of searching each string in dictionary , you can do vice versa.
-//     🟩In dp there is no optimization that u start from smallest or largest word. Start from anywhere, u need to cross match all words of dictionary to all words formed from string and find min or max or whatever is asked.
+# 🟩🟩U need to cross match all words of dictionary to all words formed from string 
+# // More similar problems to word break : Extra Characters in a String
+# // Method 2 : You just need to match all words with all dictionary.  So instead of searching each string in dictionary , you can do vice versa.
+# //     🟩In dp there is no optimization that u start from smallest or largest word. Start from anywhere, u need to cross match all words of dictionary to all words formed from string and find min or max or whatever is asked.
     
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
