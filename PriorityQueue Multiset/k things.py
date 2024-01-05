@@ -1,19 +1,22 @@
 //Tc=o(n*logn=> n*logk)  n for loop and logk for sorting caz there are only k elements in heap
 ✅✅ 👉 Maxheap(priority_queue<int>pq) pops maximum element & similarly minheap pops out mininum. Minheap : priority_queue<int,vector<int>,greater<int>>pq; 
 
-vector<int> sort(vector<int>arr,int k){
-    vector<int>ans;
-    priority_queue<int, vector<int>,greater<int>> minheap;         //priority_queue<int> maxheap for sorting in descending order or for kth smallest
-    for(int i=0;i<arr.size();i++){
-        minheap.push(arr[i]);
-        if(minheap.size()>k){ans.push_back(minheap.top());  minheap.pop(); }  //Removing this line will completely sort arr in nlogn //In k sorted array we know that when heap size exceeds k size the smallest must be at top
-    }
-    //Here minheap.top() gives kth greatest element
-    while(minheap.size()){
-        ans.push_back(minheap.top());  minheap.pop();
-    }
-    return ans;
-}
+
+import heapq
+
+def kth_largest_elements(arr, k):
+    ans = []
+    minheap = []                                        
+
+    for num in arr:
+        heapq.heappush(minheap, num)               #For maxheap : heappush(maxheap, -num)
+        if len(minheap) > k:
+            ans.append(heapq.heappop(minheap))  
+
+    while minheap:
+        ans.append(heapq.heappop(minheap))
+
+    return ans
 
 
 Greedy : Further building you can reach with k ladders and m bricks.By using ladder u can go to any height.1st push for(i=0 to k) push all elements in pq and assume all climed by ladder then insert for(i=k to n) remove all min element so that they are climed by bricks. If bricks are over, than this is the building where we can reach.
