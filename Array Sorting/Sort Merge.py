@@ -88,29 +88,6 @@ class Solution:
     class Solution:
     inversion = 0
 
-    def merge(self, arr, l, m, r):
-	//🟩😊😊start to mid and mid to end are already sorted so just compare arr[i] and arr[j] && MERGE THEM
-        temp = []
-        i = l
-        j = m + 1
-        while i <= m and j <= r:
-            if arr[i] <= arr[j]:
-                temp.append(arr[i])
-                i += 1
-            else:
-                temp.append(arr[j])
-                j += 1
-                self.inversion += m - i + 1
-	//To find pairs/inversion such that arr[i]>2*arr[j] with i<j  : if(arr[i] <= arr[j]*2)  && Rest same in above loop
-        while i <= m:
-            temp.append(arr[i])
-            i += 1
-        while j <= r:
-            temp.append(arr[j])
-            j += 1
-        for i in range(l, r + 1):
-            arr[i] = temp[i - l]
-            i += 1
 
     def mergeSort(self, arr, l, r):
         if l < r:
