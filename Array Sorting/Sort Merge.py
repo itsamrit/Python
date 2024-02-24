@@ -85,16 +85,7 @@ class Solution:
     
 
 
-    class Solution:
-    inversion = 0
 
-
-    def mergeSort(self, arr, l, r):
-        if l < r:
-            mid = (l + r) // 2
-            self.mergeSort(arr, l, mid)
-            self.mergeSort(arr, mid + 1, r)
-            self.merge(arr, l, mid, r)
 
     def inversionCount(self, arr, n):
         self.inversion = 0
