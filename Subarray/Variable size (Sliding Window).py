@@ -11,46 +11,26 @@
 https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
 TC=o(nlogn)
-int lengthOfLongestSubstring(string s) {
-        int i=0,j=0;
-        map<char,int>m;
-        int mx=0;
-        while(j<s.size()){
-            m[s[j]]++;   
-            while(m.size()<j+1-i && i<s.size()){   //✅while(invalid keep deleting leftmost element)        //For Longest substring with k unique char i,e chars can repeat: while(m.size()>k) :while(unique char>k)
-                    m[s[i]]--;
-                    if(m[s[i]]==0)m.erase(s[i]);
-                    i++;
-            }
-            if(m.size()==j-i+1)mx=max(mx,j+1-i);                                 //For longest substring with k unique char: if(m.size()==k)
-                                                                                 //TotalSubarrays with k unique char += (j-i+1);
-            j++;
-        }
-        return mx;                                                               //For longest substring with k unique char: if(mx>=k)return mx; else return -1;
-        //return totalsubarrays with k unique char;
-}
 
-PYTHON CODE :
+
+
     def lengthOfLongestSubstring(self, s: str) -> int:
-        i = 0
-        j = 0
-        m = {}
-        mx = 0
+        m=defaultdict(int)
+        i=0
+        j=0
+        ans =0
+        while(j<len(s)):
+            m[s[j]]+=1
 
-        while (j < len(s)):
-            m[s[j]] = m.get(s[j], 0) + 1
-
-            while len(m) < j + 1 - i and i < len(s):
-                m[s[i]] -= 1
-                if m[s[i]] == 0:
-                    del m[s[i]]
-                i += 1
-
-            if len(m) == j - i + 1:
-                mx = max(mx, j + 1 - i)
-
-            j += 1
-        return mx   
+            while(j-i+1 > len(m) and i<len(s)):  #//✅while(invalid keep deleting leftmost element)        //For Longest substring with k unique char i,e chars can repeat: while(m.size()>k) :while(unique char>k)
+                m[s[i]]-=1
+                if(m[s[i]]==0): m.pop(s[i]) # del m[s[i]]
+                i+=1
+            ans = max(ans, j-i+1)                  #//For longest substring with k unique char: if(m.size()==k)
+                                                   #//TotalSubarrays with k unique char += (j-i+1);
+            j+=1
+        return ans                                 #//For longest substring with k unique char: if(mx>=k)return mx; else return -1;
+         #//return totalsubarrays with k unique char;
 
 
 
