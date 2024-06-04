@@ -11,7 +11,7 @@ def countSquares(matrix):
                 # (in part of matrix we have traversed, i.e., upward left part considering the current index as the center of the graph paper)
                 # Max length of square matrix = max squares associated with the current index
                 # (in upward left part considering this is the center of the graph paper)
-                matrix[i][j] = 1 + min(matrix[i-1][j], min(matrix[i][j-1], matrix[i-1][j-1]))
+                matrix[i][j]= 1+ min(matrix[i][j-1], matrix[i-1][j], matrix[i-1][j-1])
 
             count += matrix[i][j]  # Add all squares associated with each index
             # For the max area square submatrix with all ones: ans = max(matrix[i][j], ans)
