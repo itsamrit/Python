@@ -20,6 +20,7 @@ s = "Hello, World!"
 temp = str_var
 size = len(str_var)
 c = str_var[i]
+my_string = my_string[:-1]    # Slice to exclude last character
 ```
 
 3. Char:
