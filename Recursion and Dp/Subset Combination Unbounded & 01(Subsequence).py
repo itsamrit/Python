@@ -1,7 +1,7 @@
 class Solution:
     def dfs (self, nums,i,temp,ans):
         if(i>=len(nums)):
-            ans.append(temp.copy())
+            ans.append(temp.copy())     # if u are appending temp instead of temp, u are appending reference of temp, so when temp become empty and becomes list of empty list
             return
 
         temp.append(nums[i])
