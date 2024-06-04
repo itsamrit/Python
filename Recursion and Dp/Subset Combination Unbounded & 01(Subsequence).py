@@ -4,10 +4,10 @@ class Solution:
             ans.append(temp.copy())     # if u are appending temp instead of temp, u are appending reference of temp, so when temp become empty and becomes list of empty list
             return
 
-        temp.append(nums[i])
+        temp.append(nums[i])            # ALWAYS APPEND FIRST 
         self.dfs(nums,i+1,temp,ans)
         temp.pop()
-        while(i<len(nums)-1  and nums[i] == nums[i+1]): i+=1
+        while(i<len(nums)-1  and nums[i] == nums[i+1]): i+=1   #AFTER WHILE call dfs without appended elemet
         self.dfs(nums,i+1,temp,ans)
         
 
