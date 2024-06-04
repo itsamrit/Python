@@ -196,19 +196,15 @@ print("Max-Heap:", [-x for x in max_heap])
 
 # Inserting into Min-Heap
 heapq.heappush(min_heap, 0)
-print("After inserting 0 into Min-Heap:", min_heap)
 
 # Inserting into Max-Heap (by negating value)
 heapq.heappush(max_heap, -7)
-print("After inserting -7 into Max-Heap:", [-x for x in max_heap])
 
 # Popping from Min-Heap
 min_value = heapq.heappop(min_heap)
-print(f"Popped from Min-Heap: {min_value}, Updated Min-Heap: {min_heap}")
 
 # Popping from Max-Heap (by negating value)
 max_value = -heapq.heappop(max_heap)
-print(f"Popped from Max-Heap: {max_value}, Updated Max-Heap: {[-x for x in max_heap]}")
 
 ```
 
