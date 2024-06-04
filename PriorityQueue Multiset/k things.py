@@ -5,15 +5,15 @@
 
 def kth_largest_elements(arr, k):
     ans = []
-    minheap = []                                        
+    a = []    #array only                                    
 
     for num in arr:
-        heapq.heappush(minheap, num)               #For maxheap : heappush(maxheap, -num)
-        if len(minheap) > k:
-            ans.append(heapq.heappop(minheap))  
+        heapq.heappush(h, num)               #For maxheap : heappush(maxheap, -num)
+        if len(a) > k:
+            ans.append(heapq.heappop(a))  
 
-    while minheap:
-        ans.append(heapq.heappop(minheap))
+    while a:
+        ans.append(heapq.heappop(a))   # ans.append(a[0]) and heapq.heappop(a))
 
     return ans
 
