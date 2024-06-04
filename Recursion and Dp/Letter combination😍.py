@@ -3,9 +3,9 @@
 
 class Solution:
     
-    def dfs(self, digits, c, temp, ans, letterlist):
+    def dfs(self, digits, c, temp, ans, letterlist):    
         if(c == len(digits)):
-            ans.append(temp)
+            ans.append(temp)    # IN STRING IE TEMP there is no  temp.copy() . confirm once??
             return
         
         for i in letterlist[int(digits[c]) - 2]:
