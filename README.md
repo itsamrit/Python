@@ -7,6 +7,7 @@ in for all things just like MySQL for searching
 ```python
 a = []
 a.append(element)
+last = a.pop()  //here pop returns value and pops the last elemetn
 a.remove(element)
 del a[index]
 size = len(a)
