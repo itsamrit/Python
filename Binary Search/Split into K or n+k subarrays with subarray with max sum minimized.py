@@ -1,6 +1,6 @@
 TC : o(n*logn) n for checking is all subarrays can be divided into k parts with max cap mx & logn for binary search of max cap mx.
 // KOKO EATING BANANAS : array of n to be split in n+k size opposite of this
-
+# BINARY SEARCH ON ANS 
 def valid(self,mid, h, piles):
         temph = 0
         for pile in piles:
