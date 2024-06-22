@@ -12,15 +12,22 @@ a.remove(element)
 del a[index]
 size = len(a)
 last = a[i]
+
+For appending shallow copy of list into another list
+ans.append(temp.copy())
 ```
 
-2. String:
+2. String(immutable):
 ```python
 s = "Hello, World!"
 temp = str_var
+temp += 'c'   # this creates a new string with same name temp, the previous with 
 size = len(str_var)
 c = str_var[i]
-my_string = my_string[:-1]    # Slice to exclude last character
+my_string = my_string[:-1]    # Slice to exclude last character, this make new string, since string are immutable in python
+
+For appending shallow copy of string into another list
+ans.append(s)    # since string are immutable so this string is not going to be modified in future. Even if add or slice this a new string is generated with same name
 ```
 
 3. Char:
