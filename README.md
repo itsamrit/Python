@@ -4,7 +4,9 @@ Certainly! Here's the equivalent code in Python for the given operations on diff
 in for all things just like MySQL for searching
 
 1. Dynamic Arrays (List):
+   
 ```python
+LEEetcode python is 3.11 so by default defaultdict is ordered only
 a = []
 a.append(element)
 last = a.pop()  //here pop returns value and pops the last elemetn   a.remove(element)    del a[index]
