@@ -7,6 +7,14 @@ Certainly! Here's the equivalent code in Python for the given operations on diff
 
 🥳ceil() and floor()
 
+🥳Iteration
+```
+for key in my_dict:
+    print(key, my_dict[key])
+for element in set:
+    print(element)
+```
+
 in for all things just like MySQL for searching
 
 1. Dynamic Arrays (List):
