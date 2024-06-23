@@ -1,7 +1,7 @@
 Certainly! Here's the equivalent code in Python for the given operations on different data types:
 
-pop for rightmost element in list(stack), queue. popleft() for leftmost in deque
-del a[i] for any element in list, dict(map).  .remove(key) for set
+🥳pop for rightmost element in list(stack), queue. popleft() for leftmost in deque
+🥳del a[i] for any element in list, dict(map).  .remove(key) for set
 
 in for all things just like MySQL for searching
 
