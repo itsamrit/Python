@@ -102,6 +102,7 @@ print(f"Popped from Max-Heap: {max_value}, Updated Max-Heap: {[-x for x in h]}")
 9. Map (Dictionary):
 ```python
 m = defaultdict(int) #Unordered (value datatype inside small bracket)
+#In python u give the parent datastruture i,e if u want in verticalorder traversal map of list of int , u give defaultdict(list)
 m = {}  # m = defaultdict(int) is orderedmap used in vertical order traversal of tree
 m[key] = value
 del m[key]
