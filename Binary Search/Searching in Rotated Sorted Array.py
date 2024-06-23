@@ -1,4 +1,4 @@
-//🟩🟩🟩🟩RATNA ALWAYS prefer to COMPARE WITH RIGHT PERSON 💞💞❣️right person< or right person<= both gives correct answer
+# 🟩🟩🟩🟩RATNA ALWAYS prefer to COMPARE WITH RIGHT PERSON 💞💞❣️right person< or right person<= both gives correct answer
 def bs(self,nums,target,left, right):
         while(left<=right):
             mid= (left+right)//2
