@@ -1,5 +1,7 @@
 Certainly! Here's the equivalent code in Python for the given operations on different data types:
 
+pop for rightmost element in list(stack), queue. popleft() for leftmost in deque
+del a[i] for any element in list, dict(map).  .remove(key) for set
 
 in for all things just like MySQL for searching
 
@@ -12,7 +14,7 @@ a.append(element)
 last = a.pop()  //here pop returns value and pops the last elemetn   a.remove(element)    del a[index]
 size = len(a)
 last = a[i]
-
+del a[i]
 For appending shallow copy of list into another list
 ans.append(temp.copy())
 ```
@@ -102,7 +104,7 @@ print(f"Popped from Max-Heap: {max_value}, Updated Max-Heap: {[-x for x in h]}")
 m = defaultdict(int) #Unordered (value datatype inside small bracket)
 m = {}  # m = defaultdict(int) is orderedmap used in vertical order traversal of tree
 m[key] = value
-m.pop(key)
+del m[key]
 size = len(m)
 if key in m:
     value = m[key]
