@@ -1,6 +1,44 @@
 //🟢Convert tree in graph 
 
 
+
+    def amountOfTime(self, root: Optional[TreeNode], start: int) -> int:
+        # g = defaultdict(list)   
+        g = [[] for _ in range(0,100005)]
+        q=deque()
+        q.append(root)
+        while(len(q)):
+            c=q.pop()
+            if c.left:
+                g[c.val].append(c.left.val)
+                g[c.left.val].append(c.val)
+                q.append(c.left)
+            if c.right:
+                g[c.val].append(c.right.val)
+                g[c.right.val].append(c.val)
+                q.append(c.right)
+            
+        
+        ans =0
+        q2=deque()
+        q2.append(start)
+        # vis = set()
+        vis = [1]* 100005
+
+        while(len(q2)):
+            sizee = len(q2)
+            ans+=1
+            for i in range(0,sizee):
+                c = q2.popleft()
+                vis[c]=0
+                for j in g[c]:
+                    if vis[j]==0:continue
+                    q2.append(j)
+
+
+        return ans-1
+
+
     vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
         vector<vector<int>>g(504);
         queue<TreeNode*>q;
