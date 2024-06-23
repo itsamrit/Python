@@ -3,7 +3,7 @@ Certainly! Here's the equivalent code in Python for the given operations on diff
 🥳pop for rightmost element in list(stack), queue. popleft() for leftmost in deque
 
 
-🥳del a[i] for any element in list, dict(map).  .remove(key) for set
+🥳del a[i] for any element in list, dict(map).  .add(element).remove(element) for set
 
 🥳ceil() and floor()
 
