@@ -52,7 +52,7 @@ c = 'A'
 5. Stack:
 Python doesn't have a built-in implementation of a traditional stack. Lists in Python can be used as stacks
 
-6. Queue:
+6. Queue(deque):
 
 ```python
 Python's `deque` can be used as a double-ended queue, Python has queue but its more for complicated task not used for DSA
@@ -63,11 +63,6 @@ q.append(element)
 q.popleft()
 size = len(q)
 front = q[0]
-```
-
-7. Deque:
-```python
-from collections import deque
 
 deque_var = deque()
 deque_var.appendleft(element)
