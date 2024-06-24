@@ -12,6 +12,19 @@ TreeNode* searchBST(TreeNode* root, int val) {
         return root;
 }
 
+class Solution:
+    def dfs(self, root, val):
+        if not root:
+            return None
+        if root.val == val:
+            return root
+        elif val< root.val:
+            return self.dfs(root.left, val)
+        else: return self.dfs(root.right,val)
+
+    def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        return self.dfs(root, val)
+
 
 
 
