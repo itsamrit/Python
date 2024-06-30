@@ -5,7 +5,8 @@ Direct Cyle BFS : Kahn algorithm : If topological sort not possible than there i
 // 🟩Problem that can only be solved by kahn bfs algo & cant be solved by dfs topo : Minimum Height Trees
 //         🟩Minimum Height Trees : give all root node starting from which graph has min height : store all leaf node having indeg =1 in queue & start when indeg[1]q.push instead of indeg[o] in for(auto i:g[c])
 
-
+//We can find outdegree.But for toposort indegree is required, so reverse graph and find indegree (which will outdegree of original graph)
+https://leetcode.com/problems/find-eventual-safe-states/description/  
 
 void bfs(int s){
     queue<int> q; 
