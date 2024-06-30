@@ -7,6 +7,12 @@
 //🟩Shortest weighted path with k distance : use normal queue instead of priority.Exact same code as dijkstra of priority except : use sizee like u do in level order traversal 
 //                                           && second if(dis[i.first]>c.first+i.second)  instead of dis[c.second] .Since dis is being updated continuosly & c.first will only give shortest till previous iteration while dis may include current level iterations also,so may have more than k distan i,e no level mainted
 
+
+
+https://leetcode.com/discuss/interview-question/731911/please-share-dijkstras-algorithm-questions
+https://leetcode.com/discuss/general-discussion/709997/questions-based-on-articulation-points-and-bridges/799168
+
+
 vi dis;
 vi par;
 vector<vi>path;
