@@ -1,3 +1,5 @@
+https://leetcode.com/problems/is-graph-bipartite/
+
 bool bipartite;
 void dfs(int c,int p){
     vis[c]=vis[p]%2+1;
