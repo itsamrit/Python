@@ -1,6 +1,8 @@
 NO PAIRS in python simple language
 Certainly! Here's the equivalent code in Python for the given operations on different data types:
 
+🥳BFS without levelorder traversal or priority could be done by dfs also. Only question that req priorityqueue or level order traversal could be done by BFS.
+
 🥳pop for rightmost element in list(stack), queue. popleft() for leftmost in deque
 
 
