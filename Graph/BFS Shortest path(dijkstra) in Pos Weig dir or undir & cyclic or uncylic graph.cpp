@@ -9,6 +9,25 @@
 
 
 
+BFS question:
+https://leetcode.com/problems/rotting-oranges/
+
+Common for dfs and bfs : https://leetcode.com/problems/detonate-the-maximum-bombs/description/
+            https://leetcode.com/problems/minesweeper/description/
+            https://leetcode.com/problems/01-matrix/description/
+            https://leetcode.com/problems/flood-fill/description/
+
+
+
+
+            patan nahi
+https://leetcode.com/problems/word-ladder/solutions/
+https://leetcode.com/problems/word-ladder-ii/description/
+https://www.geeksforgeeks.org/problems/alien-dictionary/1
+https://www.geeksforgeeks.org/problems/number-of-distinct-islands/0
+https://leetcode.com/problems/path-with-minimum-effort/description/
+https://leetcode.com/problems/similar-string-groups/description/
+
 https://leetcode.com/discuss/interview-question/731911/please-share-dijkstras-algorithm-questions
 https://leetcode.com/discuss/general-discussion/709997/questions-based-on-articulation-points-and-bridges/799168
 
