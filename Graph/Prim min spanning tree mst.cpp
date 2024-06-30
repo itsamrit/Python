@@ -2,6 +2,18 @@
 // 🟩In dijkstra we go further in path which has lowest dis from root.To check dis from root we need to dis[i.first]>dis[c.second]+i.second;
 // 🟩But in prim we check which node has shortest dis from cur node. So we dont bagge of root node so we check dis[i.first]>i.second; & include it in minheap
 // tc = o((e+v)logv) because it is dijkstra algo with backtracking
+
+
+
+# https://leetcode.com/problems/network-delay-time/
+# https://leetcode.com/problems/redundant-connection-ii/description/
+# https://leetcode.com/problems/redundant-connection-ii/description/
+# https://leetcode.com/problems/cheapest-flights-within-k-stops/description/
+
+
+
+
+
 vi par;
 vi dis;
 
