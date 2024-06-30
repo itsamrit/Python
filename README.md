@@ -8,6 +8,8 @@ Certainly! Here's the equivalent code in Python for the given operations on diff
 
 🥳ceil() and floor()
 
+🥳dafaultdict(defaultdict(int)) for adjacenylist  g[a][b] = val  
+
 🥳Iteration
 ```
 for key in my_dict:
