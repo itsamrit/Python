@@ -1,4 +1,5 @@
 https://leetcode.com/problems/is-graph-bipartite/
+https://leetcode.com/problems/possible-bipartition/
 
 bool bipartite;
 void dfs(int c,int p){
