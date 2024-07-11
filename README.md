@@ -1,8 +1,11 @@
+I am bad when even a single loop brackets comes and i just want to quit😡😡😡😡😡😡
+while writing also it takes times because autocomplete not works😤😤😤 in looping and its so confusing😤😤
+so x= c[0] and grid[x][y] instead of grid[c[0]][c[1]]
+
 NO PAIRS in python simple language
 Certainly! Here's the equivalent code in Python for the given operations on different data types:
 
 🥳BFS without levelorder traversal or priority could be done by dfs also. Only question that req priorityqueue or level order traversal could be done by BFS.
-
 🥳pop for rightmost element in list(stack), queue. popleft() for leftmost in deque
 
 
