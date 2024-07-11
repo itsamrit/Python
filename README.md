@@ -1,5 +1,6 @@
 I am bad when even a single loop brackets comes and i just want to quit😡😡😡😡😡😡
 while writing also it takes times because autocomplete not works😤😤😤 in looping and its so confusing😤😤
+FOUND SPEED GOES SIGNIFICANTLY DOWN AND LOGICAL THINKING IN LOOP OF [[]] SO TRY TO AVOID 
 so x= c[0] and grid[x][y] instead of grid[c[0]][c[1]]
 
 NO PAIRS in python simple language
