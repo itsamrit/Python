@@ -1,5 +1,8 @@
 In python to convert anything to anything just write in starting a = list(a) a = string(b) a = set(a)
-
+PYTHON use HASHTABLE ave tc of set/map insertion/deletion/searching is o(1) only
+MASTER
+EXCEPT INT ALL VISITED MARKING USING MAP/set
+EVEN IF LIST OF LIST OF INT use set 
 When you are delling with string like graph of words, u cant implement some crazy algo , for marking visited dont use vis[i] use set to store words and check dont thing about tc.
 
 
