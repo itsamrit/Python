@@ -12,7 +12,7 @@
 
 
 
-
+#in dict, par[child] = parent its not  par-> child its opposite since we need to backtrack
 
 vi par;
 vi dis;
