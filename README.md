@@ -3,7 +3,10 @@ In python to convert anything to anything just write in starting a = list(a) a =
 When you are delling with string like graph of words, u cant implement some crazy algo , for marking visited dont use vis[i] use set to store words and check dont thing about tc.
 
 
- For string/words problems use set for marking visited and dict for any computation
+ For string/words problems use set for marking visited and dict for any computation like parent[word[i]] =  word[c](in word ladder 2)  u cant use list in string
+
+ 
+ Basically u can mark visited using map but set looks cool but NEVER EVER TRY TO USE LIST
 
 I am bad when even a single loop brackets comes and i just want to quit😡😡😡😡😡😡
 while writing also it takes times because autocomplete not works😤😤😤 in looping and its so confusing😤😤
