@@ -1,4 +1,12 @@
+
+
 In python to convert anything to anything just write in starting a = list(a) a = string(b) a = set(a)
+
+
+💡💡💡💡Whether u have set/dict of int or strings like in word ladder or set of lists insertion, searching tc is o(1). 
+
+💡💡MY whole thinking was wrong. set/dict uses hashtable for all not like if set of string it will have  tc = tc of set searching * word length😤
+
 PYTHON use HASHTABLE ave tc of set/map insertion/deletion/searching is o(1) only
 MASTER
 EXCEPT INT ALL VISITED MARKING USING MAP/set
