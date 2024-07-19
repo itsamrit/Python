@@ -5,6 +5,11 @@ EXCEPT INT ALL VISITED MARKING USING MAP/set
 EVEN IF LIST OF LIST OF INT use set 
 When you are delling with string like graph of words, u cant implement some crazy algo , for marking visited dont use vis[i] use set to store words and check dont thing about tc.
 
+Only 2 things like list of int a and for matrix u can a same size list and matrix for marking vis . OTHER than that use set even if list of list of int like circle point [[0,1], [4,4]) use set.
+Dont think about tc its same only. 
+
+IN above case list because commonly used.
+
 
  For string/words problems use set for marking visited and dict for any computation like parent[word[i]] =  word[c](in word ladder 2)  u cant use list in string
 
