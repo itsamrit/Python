@@ -1,3 +1,5 @@
+In python to convert anything to anything just write in starting a = list(a) a = string(b) a = set(a)
+
 I am bad when even a single loop brackets comes and i just want to quit😡😡😡😡😡😡
 while writing also it takes times because autocomplete not works😤😤😤 in looping and its so confusing😤😤
 FOUND SPEED GOES SIGNIFICANTLY DOWN AND LOGICAL THINKING IN LOOP OF [[]] SO TRY TO AVOID 
