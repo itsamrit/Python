@@ -1,3 +1,7 @@
+        adj = [[]] * (n+3)
+        vis = [0]*n
+
+
 
                         temp = str(temp)
 In python to convert anything to anything just write in starting a = list(a) a = string(b) a = set(a)
