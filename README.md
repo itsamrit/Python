@@ -1,6 +1,7 @@
         adj = [[]] * (n+3)
         vis = [0]*n
-
+        for placing on 4th position
+s=s[:4]+'e'+s[5:]
 
 
                         temp = str(temp)
