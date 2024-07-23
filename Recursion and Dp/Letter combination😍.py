@@ -11,7 +11,7 @@ class Solution:
         for i in letterlist[int(digits[c]) - 2]:
             temp += i
             self.dfs(digits, c + 1, temp, ans, letterlist)
-            temp = temp[:-1]  # Remove last character
+            temp=temp[:len(temp)-1] # Remove last character
 
     def letterCombinations(self, digits: str) -> List[str]:
         letterlist = ["abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
