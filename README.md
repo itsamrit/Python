@@ -1,6 +1,11 @@
         adj = [[] for i in range(n)]
-        vis = [0]*n
+        vis = [0 for i in range(n)]    
         for placing on 4th position
+        
+        
+        
+        
+
 s=s[:4]+'e'+s[5:]
 
 
