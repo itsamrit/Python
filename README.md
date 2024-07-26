@@ -3,7 +3,8 @@
         for placing on 4th position
         
         
-        
+        in python while loop check while condition every iteration and for loops sets value once 
+ so in level order traversal while(q): for i in range(len(q)):
         
 
 s=s[:4]+'e'+s[5:]
