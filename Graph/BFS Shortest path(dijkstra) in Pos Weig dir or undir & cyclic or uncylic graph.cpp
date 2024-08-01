@@ -10,12 +10,14 @@
 
 
 BFS question:
+            https://leetcode.com/problems/01-matrix/description/  similar to starting dfs/bfs from boundry having 0 
+            https://leetcode.com/problems/flood-fill/description/
+            
 https://leetcode.com/problems/rotting-oranges/
 
-Common for dfs and bfs : https://leetcode.com/problems/detonate-the-maximum-bombs/description/
-            https://leetcode.com/problems/minesweeper/description/
-            https://leetcode.com/problems/01-matrix/description/
-            https://leetcode.com/problems/flood-fill/description/
+Common for dfs and bfs : https://leetcode.com/problems/detonate-the-maxi chutiyap
+https://leetcode.com/problems/minesweeper/description/ chityap
+
 
 
 
