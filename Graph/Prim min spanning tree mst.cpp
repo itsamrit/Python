@@ -3,7 +3,8 @@
 // 🟩But in prim we check which node has shortest dis from cur node. So we dont bagge of root node so we check dis[i.first]>i.second; & include it in minheap
 // tc = o((e+v)logv) because it is dijkstra algo with backtracking
 
-
+https://leetcode.com/problems/water-and-jug-problem/description/
+https://leetcode.com/problems/snakes-and-ladders/description/
 
 # https://leetcode.com/problems/network-delay-time/
 # https://leetcode.com/problems/redundant-connection-ii/description/
