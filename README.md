@@ -1,5 +1,7 @@
 when ur distance is not equl to each negihout i,e using heap for bfs than u cant have vis, since node may have shorter dis in next few steps so u use dis[] instead of vis[] for bfs heap cases
 
+IN toposort u can use normal logic to color each traversal using one unique color  instead of 1 and 2
+
         adj = [[] for i in range(n)]
         vis = [0 for i in range(n)]    
         for placing on 4th position
