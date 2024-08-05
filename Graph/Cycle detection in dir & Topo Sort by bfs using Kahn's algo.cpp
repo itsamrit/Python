@@ -7,6 +7,11 @@ Direct Cyle BFS : Kahn algorithm : If topological sort not possible than there i
 
 //We can find outdegree.But for toposort indegree is required, so reverse graph and find indegree (which will outdegree of original graph)
 https://leetcode.com/problems/find-eventual-safe-states/description/  
+🟩Problem that can only be solved by kahn bfs algo & cant be solved by dfs topo : Minimum Height Trees
+
+🚀🚀🚀🚀 adj graph should be opposite i,e usually we have a->b, c->b i,e i,e we can go from a to b, but here we use b->a,c which means for going to b we need to go to a & c
+        whoever indegree would be 0 we can go directlly without going anywhere.
+
 
 void bfs(int s){
     queue<int> q; 
