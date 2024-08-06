@@ -6,7 +6,7 @@ IN toposort u can use normal logic to color each traversal using one unique colo
         vis = [0 for i in range(n)]    
         for placing on 4th position
         
-        
+ans =sorted(ans) or ans.sort() same wiht reversed and .reverse()  
         in python while loop check while condition every iteration and for loops sets value once 
  so in level order traversal while(q): for i in range(len(q)):
         
