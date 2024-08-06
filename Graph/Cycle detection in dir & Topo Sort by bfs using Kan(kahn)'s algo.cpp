@@ -6,11 +6,10 @@ Direct Cyle BFS : Kahn algorithm : If topological sort not possible than there i
 //         🟩Minimum Height Trees : give all root node starting from which graph has min height : store all leaf node having indeg =1 in queue & start when indeg[1]q.push instead of indeg[o] in for(auto i:g[c])
 
 
-https://leetcode.com/problems/find-eventual-safe-states/description/  
+https://leetcode.com/problems/find-eventual-safe-states/description/  🚀🚀🚀🚀 Reversing the graph, it doesnt give the topo sort, it gives the terminal node RATNA
 🟩Problem that can only be solved by kahn bfs algo & cant be solved by dfs topo : Minimum Height Trees
 
-🚀🚀🚀🚀 adj graph should be opposite i,e usually we have a->b, c->b i,e i,e we can go from a to b, but here we use b->a,c which means for going to b we need to go to a & c
-        whoever indegree would be 0 we can go directlly without going anywhere.
+
 
 
 
