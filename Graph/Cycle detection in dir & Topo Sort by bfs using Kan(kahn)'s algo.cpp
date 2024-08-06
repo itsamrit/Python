@@ -13,6 +13,7 @@ https://leetcode.com/problems/find-eventual-safe-states/description/
         whoever indegree would be 0 we can go directlly without going anywhere.
 
 
+
 void bfs(int s){
     queue<int> q; 
     vi indegree(n+3); 
