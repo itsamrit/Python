@@ -1,3 +1,12 @@
+if u check if node1 = node2 in linked list then not only its [val, next] pointer is checked it checks if its at the same memory block. so 
+
+so even 2 nodes have same value and next pointer value is same like 4->3->4->3 and 2->3->5, both 4 nodes are different
+
+https://leetcode.com/problems/linked-list-cycle/description/
+
+
+
+
 when ur distance is not equl to each negihout i,e using heap for bfs than u cant have vis, since node may have shorter dis in next few steps so u use dis[] instead of vis[] for bfs heap cases
 
 IN toposort u can use normal logic to color each traversal using one unique color  instead of 1 and 2
