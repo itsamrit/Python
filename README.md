@@ -1,4 +1,5 @@
 how to reverse a string/list  s = s[::-1] or stringg = ''.join(reversed(stringg))
+s = ''.join(sorted(s))
 
 
 if u check if node1 = node2 in linked list then not only its [val, next] pointer is checked it checks if its at the same memory block. so 
