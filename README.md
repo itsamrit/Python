@@ -1,6 +1,7 @@
 how to reverse a string/list  s = s[::-1] or stringg = ''.join(reversed(stringg))
 s = ''.join(sorted(s))
 
+sorted(data, key=lambda x: x[1]) to sorted a list of list with its 1st index not 0th in interval problems
 
 if u check if node1 = node2 in linked list then not only its [val, next] pointer is checked it checks if its at the same memory block. so 
 
