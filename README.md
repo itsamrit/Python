@@ -8,7 +8,7 @@ If u want to sort on basis of 0th and if equals then on 1st :
 def custom_sort(item):
   return item[0], item[1]
 
-sorted_list = sorted(my_list, key=custom_sort)  
+sorted_list = sorted(my_list, key=self.custom_sort)  # dont pass (item)
   
 sorted(data, key=lambda x: x[1]) to sorted a list of list with its 1st index not 0th in interval problems
 
