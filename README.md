@@ -1,3 +1,6 @@
+how to reverse a string/list  s = s[::-1] or stringg = ''.join(reversed(stringg))
+
+
 if u check if node1 = node2 in linked list then not only its [val, next] pointer is checked it checks if its at the same memory block. so 
 
 so even 2 nodes have same value and next pointer value is same like 4->3->4->3 and 2->3->5, both 4 nodes are different
