@@ -1,6 +1,15 @@
 how to reverse a string/list  s = s[::-1] or stringg = ''.join(reversed(stringg))
 s = ''.join(sorted(s))
 
+
+If u want to sort on basis of 0th and if equals then on 1st :
+
+
+def custom_sort(item):
+  return item[0], item[1]
+
+sorted_list = sorted(my_list, key=custom_sort)  
+  
 sorted(data, key=lambda x: x[1]) to sorted a list of list with its 1st index not 0th in interval problems
 
 if u check if node1 = node2 in linked list then not only its [val, next] pointer is checked it checks if its at the same memory block. so 
