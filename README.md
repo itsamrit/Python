@@ -1,3 +1,5 @@
+in interval problems ans[-1] is last index no need ans[len(ans)-1]f
+
 import bisect
 
     lower_bound = bisect.bisect_left(arr, target)
