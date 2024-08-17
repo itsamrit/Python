@@ -1,3 +1,10 @@
+import bisect
+
+    lower_bound = bisect.bisect_left(arr, target)
+    upper_bound = bisect.bisect_right(arr, target)
+
+
+
 how to reverse a string/list  s = s[::-1] or stringg = ''.join(reversed(stringg))
 s = ''.join(sorted(s))
 
