@@ -1,6 +1,8 @@
 in interval problems ans[-1] is last index no need ans[len(ans)-1]f
 
 
+and.append(tuple(temp)) or ans.append(temp.copy())  # for making mutable list
+
 ans.clear() # for set and list for emptying set while recursion 
 https://leetcode.com/problems/remove-invalid-parentheses/
 
