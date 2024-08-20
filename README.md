@@ -1,5 +1,9 @@
 in interval problems ans[-1] is last index no need ans[len(ans)-1]f
 
+
+ans.clear() # for set and list for emptying set while recursion 
+https://leetcode.com/problems/remove-invalid-parentheses/
+
 import bisect
 
     lower_bound = bisect.bisect_left(arr, target)
