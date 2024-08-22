@@ -1,3 +1,8 @@
+When you write node1 == node2, Python checks if the memory address (or identity) of node1 is the same as that of node2.
+When u companre object of a same class
+
+
+
 in interval problems ans[-1] is last index no need ans[len(ans)-1]f
 
 
