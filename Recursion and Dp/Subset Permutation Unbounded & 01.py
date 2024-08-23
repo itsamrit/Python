@@ -1,6 +1,9 @@
 // Like all other dp questions all permutation except printing can be solved using adding dp
 //     eg: finding no of permutations having sum equal to target (1d dp since in void dfs(..,int sum) only 1 variable sum)
 
+https://leetcode.com/problems/permutations/
+https://leetcode.com/problems/permutations-ii/
+
 class Solution:
     def dfs (self, nums, temp, ans,vis):                            #😍😍😍we dont pass index c in permutation, we call dfs for i=0 to nums.size() 
         if(len(temp)==len(nums)):
