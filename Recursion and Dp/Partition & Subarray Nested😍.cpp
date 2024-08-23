@@ -4,6 +4,10 @@
 // Combination or Ways ques= boolean parenthesization else all are min max question
 
 
+https://leetcode.com/problems/permutations/
+https://leetcode.com/problems/permutations-ii/
+
+
 int f(int i,int j,vector<int> &arr, vector<vector<int>>&dp){
     if(i>=j)return 0;
     if(dp[i][j]!=-1)return dp[i][j];
