@@ -2,27 +2,25 @@
 //     eg: finding no of permutations having sum equal to target (1d dp since in void dfs(..,int sum) only 1 variable sum)
 
 class Solution:
-    def dfs (self, nums, temp, ans,vis):                              #😍😍😍we dont pass index c in permutation, we call dfs for i=0 to nums.size() 
+    def dfs (self, nums, temp, ans,vis):                            #😍😍😍we dont pass index c in permutation, we call dfs for i=0 to nums.size() 
         if(len(temp)==len(nums)):
-            ans.append(temp.copy())
+            ans.add(tuple(temp))
             return
         
         for c in range(0,len(nums)):
-            if(vis[c]==0):                                             #Remove for unbounded
-                if(c>0 and nums[c]== nums[c-1] and vis[c-1]): return   #Remove for unbounded
-                vis[c]=1                                               #Remove for unbounded
+            if(vis[c]==0):
+                vis[c]=1                                           #if(c>0 and nums[c]== nums[c-1] and vis[c-1]): return  We can use this instead of set() for unique in bounded
                 temp.append(nums[c])
-                self.dfs(nums,temp,ans,vis)                             #😍We check vis[i] but we dont pass index c in permutation, we call dfs for i=0 to nums.size()
-                vis[c]=0                                                #✅Unmark it so that element can be permuted with other things also//Remove for unbounded
+                self.dfs(nums,temp,ans,vis)                        
+                vis[c]=0             
                 temp.pop()
 
-
     def permute(self, nums: List[int]) -> List[List[int]]:
-        temp=[]
-        ans=[]
+        ans = set()
         vis=[0]*len(nums)
-        self.dfs(nums,temp,ans,vis)
-        return ans
+        self.dfs(nums,[],ans,vis)
+        return list(ans)
+        
 
 
 // Rule : For bounded: If elements of input array may have same elements eg: 112, u cant remove them like , u have to necessarily use if(i>c && cand[i]==cand[i-1])continue; i,e 112 will be formed only 1 time in combination
