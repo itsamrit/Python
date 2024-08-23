@@ -7,7 +7,7 @@ class Solution:
             ans.add(tuple(temp))
             return
         
-        for c in range(0,len(nums)):                              #we make strings having different word as starting instead of only one
+        for i in range(len(nums)):                                  #we make strings having different word as starting instead of only one
             if(vis[c]==0):
                 vis[c]=1                                           #if(c>0 and nums[c]== nums[c-1] and vis[c-1]): return  We can use this instead of set() for unique in bounded
                 temp.append(nums[c])
