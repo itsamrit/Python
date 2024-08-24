@@ -25,7 +25,7 @@ class Solution:
 
     def mergeSort(self, arr, l, r):
         if l < r:
-            mid = (l + r) // 2
+            mid = floor((l + r)/2)
             self.mergeSort(arr, l, mid)
             self.mergeSort(arr, mid + 1, r)
             self.merge(arr, l, mid, r)
