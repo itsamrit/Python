@@ -8,9 +8,14 @@ https://leetcode.com/problems/count-of-smaller-numbers-after-self/
 class Solution:
     inversion = 0
 
-    def merge(self, arr, l, m, r):
+    def mergeSort(self, arr, l, r):
+        if l>=r: return
+	m = floor((l + r)/2)               #dont use ceil in python CEIL gives wrong in python , can use ROUND but it also provides wrong in some casess
+	self.mergeSort(arr, l, m)
+	self.mergeSort(arr, m + 1, r)
+
 	#🟩😊😊start to mid and mid to end are already sorted so just compare arr[i] and arr[j] && MERGE THEM
-        temp = []
+	temp = []
         i = l
         j = m + 1
         while i <= m and j <= r:
@@ -25,13 +30,6 @@ class Solution:
 	temp.extend(arr[i:m+1])  
         temp.extend(arr[j:r+1])
         arr[l:r+1] = temp
-
-    def mergeSort(self, arr, l, r):
-        if l>=r: return
-	mid = floor((l + r)/2)               #dont use ceil in python CEIL gives wrong in python , can use ROUND but it also provides wrong in some casess
-	self.mergeSort(arr, l, mid)
-	self.mergeSort(arr, mid + 1, r)
-	self.merge(arr, l, mid, r)
 
     def inversionCount(self, arr, n):
         self.inversion = 0
