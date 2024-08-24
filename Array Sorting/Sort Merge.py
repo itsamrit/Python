@@ -25,7 +25,7 @@ class Solution:
 
     def mergeSort(self, arr, l, r):
         if l>=r: return
-	mid = floor((l + r)/2)
+	mid = floor((l + r)/2)               #dont use ceil in python CEIL gives wrong in python , can use ROUND but it also provides wrong in some casess
 	self.mergeSort(arr, l, mid)
 	self.mergeSort(arr, mid + 1, r)
 	self.merge(arr, l, mid, r)
