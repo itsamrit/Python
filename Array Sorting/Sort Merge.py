@@ -2,8 +2,6 @@
 # //You can also find inversion with merge sort. Inversion means :a[i]>a[j] & i<j
 # //t.c=0(n*logn)              s.c=o(n) because of left[n/2] + right[n/2].
 
-https://leetcode.com/problems/reverse-pairs/
-https://leetcode.com/problems/count-of-smaller-numbers-after-self/
 
 class Solution:
     inversion = 0
