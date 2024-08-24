@@ -2,21 +2,19 @@
 //🟩🟩🟩🟩RATNA   ❤️❤️Since we're just adding a layer of loop in combination 01 algo to generate the strings, so our passing of 😍😍❤️❤️c is unaffected by loop's int i
 
 class Solution:
-    
-    def dfs(self, digits, c, temp, ans, letterlist):    
-        if(c == len(digits)):
-            ans.append(temp)    
+    def dfs(self, arr, m, c, temp, ans):
+        if len(temp)==len(arr):
+            ans.append(temp)
             return
-        
-        for i in letterlist[int(digits[c]) - 2]:
-            temp += i
-            self.dfs(digits, c + 1, temp, ans, letterlist)
-            temp=temp[:len(temp)-1] # Remove last character
+
+        for i in range(len(m[int(arr[c])])):
+            self.dfs(arr, m, c+1, temp+m[int(arr[c])][i], ans)
+            
 
     def letterCombinations(self, digits: str) -> List[str]:
-        letterlist = ["abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
-        ans = []
-        if(digits == "") :
+        m=["","","abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
+        ans =[]
+        if len(digits)==0:
             return ans
-        self.dfs(digits, 0, "", ans, letterlist)
+        self.dfs(digits, m, 0, "", ans)
         return ans
