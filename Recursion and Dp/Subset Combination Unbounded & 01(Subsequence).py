@@ -43,6 +43,7 @@ class Solution:
 
 
 CHECKING EACH SUBSTRING
+INSTEAD OF CHECKING ALL index checking grps which will reduce the reduce the no of traversals, less traversals than combination
 Tc:n^2 
 https://leetcode.com/problems/word-break/description/
 
