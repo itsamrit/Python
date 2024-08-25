@@ -42,7 +42,7 @@ class Solution:
         return and
 
 
-
+CHECKING EACH SUBSTRING
 Tc:n^2 
 https://leetcode.com/problems/word-break/description/
 
