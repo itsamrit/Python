@@ -3,6 +3,20 @@ When u companre object of a same class
 
 
 
+    from functools import cmp_to_key 
+    def com(self, a,b ):  //-1,0,1 
+        if a+b>b+a:
+            return -1  //it means it will come first
+        return 1
+
+    def largestNumber(self, nums: List[int]) -> str:
+        for i in range(len(nums)):
+            nums[i]=str(nums[i])
+        
+        nums.sort(key=cmp_to_key(self.com))
+
+        
+
 in interval problems ans[-1] is last index no need ans[len(ans)-1]f
 
 
