@@ -107,7 +107,6 @@ class LFUCache:
         freq = self.key_to_freq[key]
         val = self.key_to_val[key]
 
-        # Remove the key from the current frequency list
         del self.freq_to_keys[freq][key]
         if not self.freq_to_keys[freq]:
             del self.freq_to_keys[freq]
