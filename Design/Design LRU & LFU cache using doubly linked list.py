@@ -134,7 +134,7 @@ class LFUCache:
             self.update(key)
         else:
             if len(self.key_to_val) == self.capacity:
-                evict_key, _ = self.freq_to_keys[self.min_freq].popitem(last=False)
+                evict_key, _ = self.freq_to_keys[self.min_freq].popitem(last=False) #popping lru inside lfu
                 del self.key_to_val[evict_key]
                 del self.key_to_freq[evict_key]
 
