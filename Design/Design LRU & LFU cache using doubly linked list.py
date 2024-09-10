@@ -69,13 +69,13 @@ class LRUCache:
 from collections import deque, defaultdict
 
 class LFUCache:
-    def __init__(self, capacity: int):
+    def __init__(self, capacity):
         self.cache = {}  # {key: (value, count)}
         self.counter = [deque()]  # list of deques, one deque per count
         self.max_size = capacity
         self.num_elements = 0
 
-    def increment_element(self, key: int):
+    def increment_element(self, key):
         value, count = self.cache[key]
         self.cache[key] = (value, count + 1)
         
@@ -105,18 +105,13 @@ class LFUCache:
             if success:
                 break
 
-    def get(self, key: int) -> int:
-        # If key doesn't exist, return -1
+    def get(self, key):
         if key not in self.cache:
             return -1
-        
-        # Increment usage count
         self.increment_element(key)
-        
-        # Return the value of the key
         return self.cache[key][0]
 
-    def put(self, key: int, value: int):
+    def put(self, key, value):
         # If the cache capacity is 0, do nothing
         if self.max_size == 0:
             return
