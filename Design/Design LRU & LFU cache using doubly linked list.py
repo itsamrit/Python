@@ -66,69 +66,72 @@ class LRUCache:
 
 #LFU CACHE HARD
 
-class LFUCache {
-    unordered_map<int,pair<int,int>> cache; // map[key] = {value,count}
-    vector<deque<int>> counter; // one deque per count
-    int max_size, num_elements;
+from collections import deque, defaultdict
 
-    void increment_element(int key) {
-        cache[key].second++;
-        # increase size of counter if necessary
-        while (counter.size() <= cache[key].second)
-            counter.push_back(deque<int>());
-        # add a new element into the appropriate deque
-        counter[cache[key].second].push_back(key);
-    }
+class LFUCache:
+    def __init__(self, capacity: int):
+        self.cache = {}  # {key: (value, count)}
+        self.counter = [deque()]  # list of deques, one deque per count
+        self.max_size = capacity
+        self.num_elements = 0
 
-    void remove_LFU_element() {
-        bool success = false;
-        # start from the front of the counter
-        for (int i = 0; i < counter.size() && !success; i++) {
-            # start at the front of each deque
-            while (!counter[i].empty() && !success) {
-                # if this count is valid, delete the entry in the cache
-                if (cache[counter[i].front()].second == i) {
-                    success = true;
-                    cache.erase(counter[i].front());
-                    num_elements--;
-                }
-                counter[i].pop_front(); // delete invalid and 1st valid
-            }
-        }
-    }
+    def increment_element(self, key: int):
+        value, count = self.cache[key]
+        self.cache[key] = (value, count + 1)
+        
+        # Extend the counter list if needed
+        while len(self.counter) <= count + 1:
+            self.counter.append(deque())
+        
+        # Add the key to the new deque corresponding to the incremented count
+        self.counter[count + 1].append(key)
 
-public:
-    LFUCache(int c) {
-        max_size = c;
-        num_elements = 0;
-        counter = {{}};
-    }
+    def remove_LFU_element(self):
+        success = False
+        
+        # Iterate over deques in the counter list, starting from the least count
+        for i in range(len(self.counter)):
+            while self.counter[i] and not success:
+                key = self.counter[i][0]  # Front of the deque
+                
+                # Only remove if count matches
+                if self.cache[key][1] == i:
+                    success = True
+                    self.cache.pop(key)  # Remove the element from the cache
+                    self.num_elements -= 1
+                # Remove the element from the deque (whether valid or invalid)
+                self.counter[i].popleft()
+                
+            if success:
+                break
 
-    int get(int key) {
-        # if not found, return -1
-        if (cache.find(key) == cache.end())
-            return -1;
-        # count use
-        increment_element(key);
-        # return the value
-        return cache[key].first;
-    }
-    
-    void put(int key, int value) {
-        # protect against capacity = 0
-        if (max_size == 0) return;
-        # if key exists
-        if (cache.find(key) != cache.end()) {
-            cache[key].first = value;
-            increment_element(key);
-            return;
-        }
-        # if at capacity
-        if (num_elements == max_size)
-            remove_LFU_element();
-        # add the new key
-        cache[key] = make_pair(value,0);
-        counter[0].push_back(key);
-        num_elements++;
-    }
-};
+    def get(self, key: int) -> int:
+        # If key doesn't exist, return -1
+        if key not in self.cache:
+            return -1
+        
+        # Increment usage count
+        self.increment_element(key)
+        
+        # Return the value of the key
+        return self.cache[key][0]
+
+    def put(self, key: int, value: int):
+        # If the cache capacity is 0, do nothing
+        if self.max_size == 0:
+            return
+        
+        # If the key is already in the cache, update the value and increment usage
+        if key in self.cache:
+            self.cache[key] = (value, self.cache[key][1])
+            self.increment_element(key)
+            return
+        
+        # If the cache is full, remove the least frequently used element
+        if self.num_elements == self.max_size:
+            self.remove_LFU_element()
+        
+        # Add the new key with value and count of 0
+        self.cache[key] = (value, 0)
+        self.counter[0].append(key)
+        self.num_elements += 1
