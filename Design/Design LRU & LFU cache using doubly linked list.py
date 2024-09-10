@@ -9,6 +9,32 @@
 # obj = LRUCache(capacity)
 # param_1 = obj.get(key)
 # obj.put(key,value)
+
+    #IMPLEMENTATION USING DICT
+from collections import OrderedDict
+class LRUCache:
+    def __init__(self, capacity: int):
+        #Time Complexity: O(1)
+        self.cache = OrderedDict()
+        self.capacity = capacity
+
+    def get(self, key: int) -> int:
+        #Time Complexity: O(1)
+        if key not in self.cache:
+            return -1 
+        self.cache.move_to_end(key)
+        return self.cache[key]
+
+    def put(self, key: int, value: int) -> None:
+        #Time Complexity: O(1)
+        if key in self.cache:
+            self.cache.move_to_end(key)
+        self.cache[key] = value
+        # If the cache exceeds its capacity, remove the least recently used item.
+        if len(self.cache) > self.capacity:
+            self.cache.popitem(last=False)
+
+# IMPLEMENTATION USING LINKEDLIST
 class LRUCache:
     class Node:
         def __init__(self, k, v):
