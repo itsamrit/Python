@@ -66,67 +66,59 @@ class LRUCache:
 
 #LFU CACHE HARD
 
-from collections import deque, defaultdict
+from collections import defaultdict, OrderedDict
 
 class LFUCache:
-    def __init__(self, capacity):
-        self.cache = {}  # {key: (value, count)}
-        self.counter = [deque()]  # list of deques, one deque per count
-        self.max_size = capacity
-        self.num_elements = 0
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.min_freq = 0
+        self.key_to_val = defaultdict(lambda: None)  # Stores key-value pairs with default None
+        self.key_to_freq = defaultdict(int)  # Stores key-frequency pairs with default 0
+        self.freq_to_keys = defaultdict(OrderedDict)  # Maps frequency to an ordered dict of keys
 
-    def increment_element(self, key):
-        value, count = self.cache[key]
-        self.cache[key] = (value, count + 1)
-        
-        # Extend the counter list if needed
-        while len(self.counter) <= count + 1:
-            self.counter.append(deque())
-        
-        # Add the key to the new deque corresponding to the incremented count
-        self.counter[count + 1].append(key)
+    def update(self, key: int):
+        #Time Complexity: O(1) amortized
+        freq = self.key_to_freq[key]
+        val = self.key_to_val[key]
 
-    def remove_LFU_element(self):
-        success = False
-        
-        # Iterate over deques in the counter list, starting from the least count
-        for i in range(len(self.counter)):
-            while self.counter[i] and not success:
-                key = self.counter[i][0]  # Front of the deque
-                
-                # Only remove if count matches
-                if self.cache[key][1] == i:
-                    success = True
-                    self.cache.pop(key)  # Remove the element from the cache
-                    self.num_elements -= 1
-                # Remove the element from the deque (whether valid or invalid)
-                self.counter[i].popleft()
-                
-            if success:
-                break
+        # Remove the key from the current frequency list
+        del self.freq_to_keys[freq][key]
+        if not self.freq_to_keys[freq]:
+            del self.freq_to_keys[freq]
+            if freq == self.min_freq:
+                self.min_freq += 1
 
-    def get(self, key):
-        if key not in self.cache:
+        # Add the key to the new frequency list
+        self.key_to_freq[key] = freq + 1
+        self.freq_to_keys[freq + 1][key] = val
+
+    def get(self, key: int) -> int:
+        #Time Complexity: O(1) amortized
+        if key not in self.key_to_val or self.key_to_val[key] is None:
             return -1
-        self.increment_element(key)
-        return self.cache[key][0]
+        
+        self.update(key)
+        return self.key_to_val[key]
 
-    def put(self, key, value):
-        # If the cache capacity is 0, do nothing
-        if self.max_size == 0:
+    def put(self, key: int, value: int) -> None:
+        # Time Complexity: O(1) amortized
+        if self.capacity == 0:
             return
-        
-        # If the key is already in the cache, update the value and increment usage
-        if key in self.cache:
-            self.cache[key] = (value, self.cache[key][1])
-            self.increment_element(key)
-            return
-        
-        # If the cache is full, remove the least frequently used element
-        if self.num_elements == self.max_size:
-            self.remove_LFU_element()
-        
-        # Add the new key with value and count of 0
-        self.cache[key] = (value, 0)
-        self.counter[0].append(key)
-        self.num_elements += 1
+
+        if key in self.key_to_val and self.key_to_val[key] is not None:
+            # Update value and frequency
+            self.key_to_val[key] = value
+            self.update(key)
+        else:
+            # If cache is full, evict the least frequently used item
+            if len(self.key_to_val) == self.capacity:
+                # Evict the least frequently used and least recently used key
+                evict_key, _ = self.freq_to_keys[self.min_freq].popitem(last=False)
+                del self.key_to_val[evict_key]
+                del self.key_to_freq[evict_key]
+
+            # Insert the new key-value pair
+            self.key_to_val[key] = value
+            self.key_to_freq[key] = 1
+            self.freq_to_keys[1][key] = value
+            self.min_freq = 1
