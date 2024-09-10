@@ -93,7 +93,6 @@ class LRUCache:
 #LFU CACHE HARD
 
 from collections import defaultdict, OrderedDict
-
 class LFUCache:
     def __init__(self, capacity):
         self.capacity = capacity
