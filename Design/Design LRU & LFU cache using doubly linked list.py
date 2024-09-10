@@ -132,13 +132,10 @@ class LFUCache:
             return
 
         if key in self.key_to_val and self.key_to_val[key] is not None:
-            # Update value and frequency
             self.key_to_val[key] = value
             self.update(key)
         else:
-            # If cache is full, evict the least frequently used item
             if len(self.key_to_val) == self.capacity:
-                # Evict the least frequently used and least recently used key
                 evict_key, _ = self.freq_to_keys[self.min_freq].popitem(last=False)
                 del self.key_to_val[evict_key]
                 del self.key_to_freq[evict_key]
