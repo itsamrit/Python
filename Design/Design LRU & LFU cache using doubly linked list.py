@@ -95,14 +95,14 @@ class LRUCache:
 from collections import defaultdict, OrderedDict
 
 class LFUCache:
-    def __init__(self, capacity: int):
+    def __init__(self, capacity):
         self.capacity = capacity
         self.min_freq = 0
         self.key_to_val = defaultdict(lambda: None)  # Stores key-value pairs with default None
         self.key_to_freq = defaultdict(int)  # Stores key-frequency pairs with default 0
         self.freq_to_keys = defaultdict(OrderedDict)  # Maps frequency to an ordered dict of keys
 
-    def update(self, key: int):
+    def update(self, key):
         #Time Complexity: O(1) amortized
         freq = self.key_to_freq[key]
         val = self.key_to_val[key]
@@ -118,7 +118,7 @@ class LFUCache:
         self.key_to_freq[key] = freq + 1
         self.freq_to_keys[freq + 1][key] = val
 
-    def get(self, key: int) -> int:
+    def get(self, key) :
         #Time Complexity: O(1) amortized
         if key not in self.key_to_val or self.key_to_val[key] is None:
             return -1
@@ -126,7 +126,7 @@ class LFUCache:
         self.update(key)
         return self.key_to_val[key]
 
-    def put(self, key: int, value: int) -> None:
+    def put(self, key, value):
         # Time Complexity: O(1) amortized
         if self.capacity == 0:
             return
