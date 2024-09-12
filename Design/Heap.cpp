@@ -1,5 +1,5 @@
 // Two ways to implement heap with heapify algorithm & without heapify algorithm
-// In without heapify, there is no actual binary tree, we assume that the array is a binary tree
+
 1st Without heapify : the below code is for max heap  
 class heap{
     public :
