@@ -1,50 +1,45 @@
-class TrieNode{
-    public:
-        bool isComplete;
-        TrieNode* child[26];   // 🟩IN tree Node* left; the we check if(!left) here we check if(!child[i])   
-                               // Each trieNode have 2 prop 1. bool isComplete 2. TrieNode will contain another array of trieNode of size 26 like 
-                                   //🟩char name[size] : TrieNode* child[26];
-    
-        // TrieNode(){             //  Since by deault isCompleete is false and all child values are NUll or 0 we dont need constructor
-        //     isComplete = false;
-        //     memset(child,0,sizeof(child));
-        // }
-};
-class Trie {
-public:
-    TrieNode* root;    // defining pointer to point at root node. Here only pointer is declared not its position.
-    
-    Trie() {
-        root = new TrieNode();   // here position of above pointer is declared i,e root of whole tree
-    }
-    
-    void insert(string word) {     // NEVER USE & like string &word : gives error
-        TrieNode* temp = root;
-        for(auto it:word){
-            int ind = it - 'a';    //🟩Assumption all char are in small letters
-            if(!temp->child[ind])    
-                temp->child[ind] = new TrieNode();
-            temp = temp->child[ind];
-        }
-        temp->isComplete = true;
-    }
-    
-    bool search(string word) {
-        TrieNode* temp = root;
-        for(auto it:word){
-            int ind = it - 'a';
-            if(!temp->child[ind])
-                return false;
-            temp = temp->child[ind];
-        }
-        return temp->isComplete;    // If Checking whether there is word having all the starting words of prefix whether it at prefix or not then : return true;
-    }
-};
+class Node:
+    def __init__(self):
+        self.m = {}
+        self.is_end = False
 
-/**
- * Your Trie object will be instantiated and called as such:
- * Trie* obj = new Trie();
- * obj->insert(word);
- * bool param_2 = obj->search(word);
- * bool param_3 = obj->startsWith(prefix);
- */
+
+class Trie:
+    def __init__(self):
+        self.node = Node()
+
+    def insert(self, word):
+        root = self.node
+        for i in range(len(word)):
+            if not word[i] in root.m:
+                root.m[word[i]]= Node()
+            root = root.m[word[i]]
+        root.is_end = True
+    
+    def search(self, word):
+        root = self.node
+        for i in range(len(word)):
+            if not word[i] in root.m:
+                return False
+            root = root.m[word[i]]
+        if root.is_end == True:
+            return True
+        return False
+    
+    def startsWith(self, word):
+        root = self.node
+        for i in range(len(word)):
+            if not word[i] in root.m:
+                return False
+            root = root.m[word[i]]
+        
+        return True
+
+
+trie = Trie()
+trie.insert("apple")
+print(trie.search("apple"))
+print(trie.search("app")) 
+print(trie.startsWith("app")) 
+trie.insert("app")
+print(trie.search("app")) 
