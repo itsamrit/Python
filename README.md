@@ -1,3 +1,8 @@
+s = "Hello"
+s = list(string)
+s = ''.join(s)
+
+
 When you write node1 == node2, Python checks if the memory address (or identity) of node1 is the same as that of node2.
 When u companre object of a same class
 
