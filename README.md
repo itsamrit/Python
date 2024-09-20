@@ -1,6 +1,15 @@
+convert to list other slicing takes more time in for loop
+
 s = "Hello"
 s = list(string)
 s = ''.join(s)
+
+
+and ord(s[i])-'a') #for getting int
+
+chr(ord('A') + i)    # for getting char or int i
+
+
 
 
 When you write node1 == node2, Python checks if the memory address (or identity) of node1 is the same as that of node2.
