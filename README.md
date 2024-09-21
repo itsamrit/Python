@@ -4,6 +4,10 @@ s = "Hello"
 s = list(string)
 s = ''.join(s)
 
+if u want to copy a list
+
+newtemp = list(temp) # otherwise reference if newtemp = temp
+
 
 and ord(s[i])-'a') #for getting int
 
